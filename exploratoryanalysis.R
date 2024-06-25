@@ -24,3 +24,15 @@ summaryna = function (exposure) {
   list(s, na)
 }
 lapply(data, summaryna)
+
+# CONTINUOUS SUMMARY INFO: mean and standard deviation by outcome variable
+meansd = function (exposure) {
+  m1 = mean(data[data$outcome==1, exposure], na.rm =T)
+  sd1 = sd(data[data$outcome==1, exposure], na.rm =T)
+  m2 = mean(data[data$outcome==2, exposure], na.rm =T)
+  sd2 = sd(data[data$outcome==2, exposure], na.rm =T)
+  mall = mean(data[,exposure], na.rm =T)
+  sdall = sd(data[,exposure], na.rm =T)
+  list(exposure, m1, sd1, m2, sd2, mall, sdall)
+}
+lapply(colnames(data), meansd)
