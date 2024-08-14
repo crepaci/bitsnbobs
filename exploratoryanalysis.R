@@ -1,6 +1,10 @@
 # find index of any NA values
 which(is.na(data_frame), arr.ind=TRUE)
 
+# table 1 package
+# use in RMD file
+table1(~. | explanatoryvar, data=d)
+
 # SPLIT CATEGORICAL AND CONTINUOUS DATA into two datasets
 # note that categorical data may be numeric values which will be "continuous" by this method unless it is binary
 # adapted from: https://stackoverflow.com/questions/18150801/is-there-an-easy-way-to-separate-categorical-vs-continuous-variables-into-two-da
