@@ -1,9 +1,15 @@
 # find index of any NA values
-which(is.na(data_frame), arr.ind=TRUE)
+which(is.na(data), arr.ind=TRUE)
 
 # table 1 package
 # use in RMD file
+library(table1)
 table1(~. | explanatoryvar, data=d)
+
+# gg pairs from GGally package
+# https://www.r-bloggers.com/2021/06/ggpairs-in-r-a-brief-introduction-to-ggpairs/
+library(GGally)
+ggpairs(data, columns = 2:4, ggplot2::aes(colour=categoryvariable))
 
 # SPLIT CATEGORICAL AND CONTINUOUS DATA into two datasets
 # note that categorical data may be numeric values which will be "continuous" by this method unless it is binary
