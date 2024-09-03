@@ -1,6 +1,9 @@
 # find index of any NA values
 which(is.na(data), arr.ind=TRUE)
 
+# find any duplicated column names after joining
+grep(pattern=".x",names(data),value=TRUE)
+
 # table 1 package
 # use in RMD file
 library(table1)
