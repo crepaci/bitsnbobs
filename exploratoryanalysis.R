@@ -1,3 +1,8 @@
+
+# view dataframe metadata: pos, variable, label, col_type, N missing, levels, value_labels
+library(labelled)
+View(look_for(data))
+
 # find index of any NA values
 which(is.na(data), arr.ind=TRUE)
 
