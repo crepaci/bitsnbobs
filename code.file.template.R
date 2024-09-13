@@ -16,7 +16,8 @@
 
 #################################### SET UP ####################################
 # SET YOUR WORKING DIRECTORY TO THE PROJECT FOLDER
-setwd(paste0(Sys.getenv("RKJCOLLAB"), "/Project_Folder"))
+projectpath = paste0(Sys.getenv("RKJCOLLAB"), "/Project_Folder")
+setwd(projectpath)
 
 # SETUP RUN LOG
 start.time = paste0("Start Time: ", format(Sys.time(), "%a %b %d %Y %X"))
@@ -48,8 +49,9 @@ load("data/path/file.Rdata") # data used for...
 #################################### OUTPUT ####################################
 
 # SAVE FILES
-write.csv(data, "data/path/file.csv", row.names = F)
-save(object, "data/path/file.RData")
+savepath = paste0(projectpath, "/data/path/here/")
+write.csv(data, paste0(savepath, "filename.csv"), row.names = FALSE)
+save(object, paste0(savepath, "filename.RData"))
 
 # SESSION INFO OUTPUT
 sink(file=NULL, type="output")
