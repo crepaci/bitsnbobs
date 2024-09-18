@@ -3,6 +3,9 @@
 library(labelled)
 View(look_for(data))
 
+# set table function to always use NA if there are any
+table = function (..., useNA = 'ifany') base::table(..., useNA = useNA)
+
 # find index of any NA values
 which(is.na(data), arr.ind=TRUE)
 
