@@ -24,8 +24,8 @@ start.time = paste0("Start Time: ", format(Sys.time(), "%a %b %d %Y %X"))
 log.path = paste0("documentation/code/doc/path/run-log/THIS_FILE_NAME_", 
                   format(Sys.time(), "%Y-%m-%d.%H%M"), ".txt")
 log.file = file(log.path, open = "wt")
-sink(file=log.file, type="message")
-sink(file=log.file, type="output")
+sink(file=log.file, type="message", split=TRUE)
+sink(file=log.file, type="output", split=TRUE)
 
 # LIBRARIES
 library(libname) # what do you use this library for
