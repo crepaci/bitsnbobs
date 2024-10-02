@@ -36,6 +36,8 @@ load("data/path/file.Rdata") # data used for...
 
 # SET FUNCTIONS ----------------------------------------------------------------
 
+table = function (..., useNA = 'ifany') base::table(..., useNA = useNA) 
+# set table() function to always useNA unless otherwise specified
 
 # DATA CLEANING ----------------------------------------------------------------
 
