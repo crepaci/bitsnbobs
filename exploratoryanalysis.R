@@ -9,9 +9,20 @@ table = function (..., useNA = 'ifany') base::table(..., useNA = useNA)
 # find index of any NA values
 which(is.na(data), arr.ind=TRUE)
 
+#####################################################
 # find any duplicated column names after joining
 grep(pattern=".x",names(data),value=TRUE)
 
+# find duplicated column names before joining
+vars = c(colnames(df1), colnames(df2), colnames(df3))
+source = c(rep("df1", ncol(df1)), rep("df2", ncol(df2)), rep("df3", ncol(df3))) 
+datvars = data.frame(vars, source)
+dupcols = unique(datvars$vars[duplicated(datvars$vars)])
+dupcols = dupcols[! dupcols %in% c("ID")]
+dups = datvars[datvars$vars %in% dupcols,]
+by(dups, dups$vars, identity)
+
+#####################################################
 # table 1 package
 # use in RMD file
 library(table1)
