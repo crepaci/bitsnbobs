@@ -33,6 +33,7 @@ library(libname) # what do you use this library for
 # LOAD IN DATA
 data = read.csv("data/path/file.csv") # data used for...
 load("data/path/file.Rdata") # data used for...
+df = readRDS("data/path/file.RDS") # data used for...
 
 # SET FUNCTIONS ----------------------------------------------------------------
 
@@ -54,6 +55,7 @@ table = function (..., useNA = 'ifany') base::table(..., useNA = useNA)
 savepath = paste0(projectpath, "/data/path/here/")
 write.csv(data, paste0(savepath, "filename.csv"), row.names = FALSE)
 save(object, paste0(savepath, "filename.RData"))
+saveRDS(df, paste0(savepath, "filename.RDS"))
 
 # SESSION INFO OUTPUT
 sink(file=NULL, type="output")
