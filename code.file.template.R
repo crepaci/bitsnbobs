@@ -14,7 +14,7 @@
 #' Special considerations and decisions
 
 
-#################################### SET UP ####################################
+######################################### SET UP #########################################
 # SET YOUR WORKING DIRECTORY TO THE PROJECT FOLDER
 projectpath = paste0(Sys.getenv("RKJCOLLAB"), "/Project_Folder")
 setwd(projectpath)
@@ -35,21 +35,21 @@ data = read.csv("data/path/file.csv") # data used for...
 load("data/path/file.Rdata") # data used for...
 df = readRDS("data/path/file.RDS") # data used for...
 
-# SET FUNCTIONS ----------------------------------------------------------------
+# SET FUNCTIONS --------------------------------------------------------------------------
 
 table = function (..., useNA = 'ifany') base::table(..., useNA = useNA) 
 # set table() function to always useNA unless otherwise specified
 
-# DATA CLEANING ----------------------------------------------------------------
+# DATA CLEANING --------------------------------------------------------------------------
 
 
-################################## SET UP END ##################################
+####################################### SET UP END #######################################
 
 
 # do stuff here
 
 
-#################################### OUTPUT ####################################
+######################################### OUTPUT #########################################
 
 # SAVE FILES
 savepath = paste0(projectpath, "/data/path/here/")
